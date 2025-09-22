@@ -9,7 +9,6 @@ const userSchema = new mongoose.Schema({
     lastName: {
         type: String,
         trim: true,
-        required: true
     },
     email: {
         type: String,
@@ -35,6 +34,12 @@ const userSchema = new mongoose.Schema({
     collegeId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "College"
+    },
+    college_AISHE_code: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
     },
     about: {
         type: String,

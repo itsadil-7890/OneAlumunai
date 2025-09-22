@@ -5,9 +5,17 @@ const CollegeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    AISHE_code: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
+    },
     email: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
+        unique: true
     },
     location: {
         type: String,
@@ -16,6 +24,16 @@ const CollegeSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    keyFeatures: [{
+        type: String,
+        trim: true
+    }],
+    url: {
+        type: String,
+        trim: true,
+        required: true,
+        unique: true
     },
     logo: {
         type: String,
@@ -58,3 +76,7 @@ const CollegeSchema = new mongoose.Schema({
     ]
 
 })
+
+const College = mongoose.model.College || mongoose.model("College", CollegeSchema)
+export default College
+
