@@ -14,12 +14,16 @@ const projectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    points: [
+    date: {
+        type: Date,
+        default: Date.now,
+    },
+    keyFeatures: [
         {
             type: String,
         }
     ],
-    liveLink: {
+    url: {
         type: String,
         required: true,
     },

@@ -6,9 +6,10 @@ const reviewSchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
+    // to which type this review belongs
     reviewType: {
         type: String,
-        enum: ["alumini", "blogs", "college"],
+        enum: ["alumni", "blogs", "college"],
         required: true,
     },
     review: {
@@ -17,15 +18,6 @@ const reviewSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        required: true,
-    },
-
-    id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: {
-            type: String,
-            enum: ["alumini", "blogs", "college"],
-        },
         required: true,
     },
     date: {
