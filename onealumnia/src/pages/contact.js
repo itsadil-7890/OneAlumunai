@@ -15,7 +15,7 @@ export default function Contact() {
         {/* Contact Form Card */}
         <div
           className="group bg-transparent  mt-20 shadow-xl rounded-2xl p-8 
-                     border border-white/20 t  hover:shadow-[0_0_25px_rgba(37,99,235,0.35)] transform transition duration-500 hover:scale-[1.02] hover:rotate-2"
+                     border border-white/20 t  hover:shadow-[0_0_25px_rgba(37,99,235,0.35)] transform transition duration-500 hover:scale-[1.02] hover:rotate-0.5"
         >
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-6">
             Contact Us
