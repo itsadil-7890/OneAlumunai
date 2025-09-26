@@ -97,7 +97,7 @@ const features = [
   {
     title: "Centralized Alumni Database",
     solution:
-      "A secure, centralized system where alumni can keep profiles updated and institutions maintain reliable records.",
+      "A secure, centralized platform that allows alumni to maintain and update their profiles while enabling institutions to manage and access accurate, reliable records efficiently.",
     icon: Database,
   },
   {
@@ -109,25 +109,25 @@ const features = [
   {
     title: "Mentorship & Career Guidance",
     solution:
-      "Alumni can register as mentors, share career advice, and post opportunities.",
+      "Alumni can register as mentors on the platform, provide guidance and career advice to students, and share job or internship opportunities, fostering professional growth and networking.",
     icon: Users,
   },
   {
     title: "Event Engagement & Participation",
     solution:
-      "Event management features with invitations, tracking, and engagement.",
+      "Comprehensive event management features including creating and sending invitations, tracking RSVPs and attendance, monitoring participant engagement, and facilitating seamless communication and interaction throughout the event lifecycle.",
     icon: Calendar,
   },
   {
     title: "Internship & Job Opportunities",
     solution:
-      "Alumni and recruiters can post openings, students can apply directly.",
+      "The platform allows alumni and recruiters to post job and internship openings, while students can browse listings and apply directly, streamlining the recruitment and application process efficiently.",
     icon: Briefcase,
   },
   {
     title: "Fundraising & Giving Back",
     solution:
-      "Transparent donation system with easy contribution and impact tracking.",
+      "A transparent donation system that enables users to contribute easily, track their donations, and monitor the real-time impact of their contributions on supported causes.",
     icon: Heart,
   },
 ];

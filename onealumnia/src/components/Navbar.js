@@ -22,7 +22,7 @@ export default function Navbar() {
           href="/"
           className="text-4xl font-bold tracking-tight text-blue-600 hover:text-blue-700 transition-colors"
         >
-          OneAlumunai
+          <span className="text-blue-400">One</span>Alumni
         </Link>
 
         {/* Desktop Links */}
