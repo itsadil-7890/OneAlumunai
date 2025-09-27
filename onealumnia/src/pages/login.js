@@ -1,24 +1,26 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const login = () => {
+const Login = () => {
   const roles = useMemo(
     () => [
       {
-        role: "Admin",
-        title: "Login as an Admin",
-        subTitle: "",
+        role: "Alumni",
+        title: "Login as an Alumni",
+        subTitle: "Login as an Alumni Connect and give back to your institution.",
       },
       {
         role: "Student",
         title: "Build skills for today, tomorrow, and beyond.",
-        subTitle: "Education to future-proof your career.",
+        subTitle: "Login as a Student Connect and explore endless career opportunities.",
       },
       {
-        role: "Instructor",
+        role: "College",
         title: "Discover your passion",
-        subTitle: "Be unstoppable",
+        subTitle: "Login as a College Connect and strengthen bonds with your alumni",
       },
     ],
     []
@@ -53,119 +55,128 @@ const login = () => {
   }, []);
 
   return (
-    <div className="w-[95%] max-w-[1100px] mx-auto mt-10 mb-10">
-      <div className="bg-gray-900 p-2 rounded-xl tablet:h-[690px] flex flex-col md:flex-row-reverse items-center justify-between">
-        {/* Image Section */}
-        <div className="w-full tablet2:w-1/2 flex justify-center p-5 relative min-h-[250px]">
-          <img
-            src="https://res.cloudinary.com/dort5nnis/image/upload/v1741914599/erasebg-transformed_2_hetfta.png"
-            alt="Secure Login"
-            className="rounded-2xl w-[90%] max-w-[400px] h-auto object-contain"
-          />
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-gray-900 flex flex-col">
+      {/* Navbar */}
+      <Navbar />
 
-        {/* Form Section */}
-        <div className="w-full md:w-1/2 p-5 flex flex-col gap-3 text-center md:text-left">
-          <h1 className="text-[30px] tablet:text-[40px] font-bold text-white">
-            Welcome back
-          </h1>
-          <p className="text-gray-400 text-[18px] mt-2 md:w-[80%] h-[100px] tablet:h-[60px]">
-            {currentRole.title}{" "}
-            <span className="text-dark_red italic text-[17px]">
-              {currentRole.subTitle}
-            </span>
-          </p>
-
-          {/* Role Toggle */}
-          <div className="flex items-center justify-center md:justify-start mt-5">
-            <div className="relative flex items-center bg-gray-800 w-[240px] md:w-[300px] h-[43px] rounded-full p-1">
-              <div
-                className={`absolute z-[1] w-1/3 h-[90%] bg-dark_red rounded-full transition-all duration-300 ${
-                  currentRole.role === "Admin"
-                    ? "left-1"
-                    : currentRole.role === "Student"
-                    ? "left-[33%]"
-                    : "left-[66%]"
-                }`}
-              ></div>
-              {roles.map((role, index) => (
-                <div
-                  key={role.role}
-                  className={`w-1/3 text-center cursor-pointer z-[1] text-sm md:text-base ${
-                    currentRole.role === role.role
-                      ? "text-white font-bold"
-                      : "text-gray-400"
-                  }`}
-                  onClick={() => updateRole(index)}
-                >
-                  {role.role}
-                </div>
-              ))}
-            </div>
+      {/* Main Content */}
+      <div className="flex-grow flex pt-26 items-center justify-center px-4 py-12">
+        <div className="bg-white/70 backdrop-blur-lg border border-gray-200 rounded-2xl shadow-lg w-full max-w-5xl flex flex-col md:flex-row-reverse overflow-hidden">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex justify-center items-center  from-blue-100/40 to-indigo-100/40 p-8">
+            <img
+              src="https://res.cloudinary.com/dort5nnis/image/upload/v1741914599/erasebg-transformed_2_hetfta.png"
+              alt="Secure Login"
+              className="rounded-2xl w-[85%] max-w-[380px] h-auto object-contain shadow-md"
+            />
           </div>
 
-          {/* Form */}
-          <form className="flex flex-col gap-3 mt-4 text-start w-full md:max-w-[400px]">
-            <label htmlFor="email" className="text-gray-300 font-medium">
-              Email Address<span className="text-dark_red ml-1">*</span>
-            </label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              className="p-3 border text-gray-300 border-gray-600 rounded-lg bg-transparent focus:outline-none focus:ring-1 focus:ring-gray-700"
-              value={bodyData.email}
-              onChange={updateUserData}
-              required
-            />
+          {/* Form Section */}
+          <div className="w-full md:w-1/2 p-8 flex flex-col gap-4 text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+              Welcome back
+            </h1>
+            <p className="text-gray-700 text-[17px]">
+              {currentRole.title}{" "}
+              <span className="text-blue-600 italic">
+                {currentRole.subTitle}
+              </span>
+            </p>
 
-            <label htmlFor="password" className="text-gray-300 font-medium">
-              Password<span className="text-dark_red ml-1">*</span>
-            </label>
-            <div className="relative">
+            {/* Role Toggle */}
+            <div className="flex items-center justify-center md:justify-start mt-6">
+              <div className="relative flex items-center bg-blue-100 w-[240px] md:w-[300px] h-[43px] rounded-full p-1 shadow-inner">
+                <div
+                  className={`absolute z-[1] w-1/3 h-[90%] bg-blue-600 rounded-full transition-all duration-300 ${
+                    currentRole.role === "Alumni"
+                      ? "left-1"
+                      : currentRole.role === "Student"
+                      ? "left-[33%]"
+                      : "left-[66%]"
+                  }`}
+                ></div>
+                {roles.map((role, index) => (
+                  <div
+                    key={role.role}
+                    className={`w-1/3 text-center cursor-pointer z-[2] text-sm md:text-base transition ${
+                      currentRole.role === role.role
+                        ? "text-white font-semibold"
+                        : "text-gray-600"
+                    }`}
+                    onClick={() => updateRole(index)}
+                  >
+                    {role.role}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Form */}
+            <form className="flex flex-col gap-4 mt-6 w-full md:max-w-[380px]">
+              <label htmlFor="email" className="text-gray-700 font-medium">
+                Email Address<span className="text-blue-600 ml-1">*</span>
+              </label>
               <input
-                name="password"
-                type={isPasswordVisible ? "text" : "password"}
-                id="password"
-                placeholder="Enter your password"
-                className="p-3 border text-gray-300 border-gray-600 rounded-lg bg-transparent w-full pr-10 focus:outline-none focus:ring-1 focus:ring-gray-700"
-                value={bodyData.password}
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                className="p-3 border border-gray-300 text-gray-900 rounded-lg bg-white/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={bodyData.email}
                 onChange={updateUserData}
                 required
               />
+
+              <label htmlFor="password" className="text-gray-700 font-medium">
+                Password<span className="text-blue-600 ml-1">*</span>
+              </label>
+              <div className="relative">
+                <input
+                  name="password"
+                  type={isPasswordVisible ? "text" : "password"}
+                  id="password"
+                  placeholder="Enter your password"
+                  className="p-3 border border-gray-300 text-gray-900 rounded-lg bg-white/70 backdrop-blur-sm w-full pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={bodyData.password}
+                  onChange={updateUserData}
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
+                >
+                  {isPasswordVisible ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              <p className="text-gray-600 hover:text-blue-600 text-sm text-end cursor-pointer">
+                Forgot password?
+              </p>
+
               <button
                 type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-300"
+                className="w-full flex justify-center items-center py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition duration-200"
               >
-                {isPasswordVisible ? <FaEyeSlash /> : <FaEye />}
+                <IoMdLogIn className="mr-2" />
+                Sign In
               </button>
-            </div>
 
-            <p className="text-gray-300 hover:text-dark_red text-[13px] text-end cursor-pointer">
-              Forgot password?
-            </p>
-
-            <button
-              type="button"
-              className="w-full flex justify-center items-center py-2 px-4 bg-dark_red hover:bg-dark_red/80 text-white font-medium rounded-md transition duration-200"
-            >
-              <IoMdLogIn className="mr-2" />
-              Sign In
-            </button>
-
-            <p className="text-end mt-1 text-sm md:text-base text-gray-300 flex gap-1 justify-end">
-              <span>New user?</span>
-              <span className="text-dark_red font-semibold hover:text-dark_red/80 cursor-pointer">
-                Register now
-              </span>
-            </p>
-          </form>
+              <p className="text-end mt-2 text-sm text-gray-700 flex gap-1 justify-end">
+                <span>New user?</span>
+                <span className="text-blue-600 font-semibold hover:text-blue-700 cursor-pointer">
+                  Register now
+                </span>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
 
-export default React.memo(login);
+export default React.memo(Login);
