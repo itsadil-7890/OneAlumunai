@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 // sample adil testing
 
-const Register = () => {
+const Register = () => { 
   const roles = [
     {
       role: "Student",
