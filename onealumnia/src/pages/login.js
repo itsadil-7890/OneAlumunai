@@ -164,9 +164,9 @@ const Login = () => {
 
               <p className="text-end mt-2 text-sm text-gray-700 flex gap-1 justify-end">
                 <span>New user?</span>
-                <span className="text-blue-600 font-semibold hover:text-blue-700 cursor-pointer">
+                <a href="/signup"><span className="text-blue-600 font-semibold hover:text-blue-700 cursor-pointer" href="/signup">
                   Register now
-                </span>
+                </span></a>
               </p>
             </form>
           </div>
