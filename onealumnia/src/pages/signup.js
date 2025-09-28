@@ -3,6 +3,8 @@ import { FaEye, FaEyeSlash, FaRegistered } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// sample adil testing
+
 const Register = () => {
   const roles = [
     {
